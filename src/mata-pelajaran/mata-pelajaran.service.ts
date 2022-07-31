@@ -20,6 +20,10 @@ export class MataPelajaranService {
     async showAllData() {
         return this.mapelRepository.find()
     }
+    
+    async search(condition: any): Promise<MataPelajaran> {
+        return this.mapelRepository.findOne({where: {nama_mata_pelajaran: condition}})
+    }
 
     async update(id: number, data: any) {
         return this.mapelRepository.update(id, data)
