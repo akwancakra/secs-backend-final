@@ -71,6 +71,11 @@ export class SiswaController {
 
         return show
     }
+    
+    @Get('search')
+    async search(@Param('datasearch') search: string){
+        const show = await this.siswaService.search(search)
+    }
 
     @Post('update-img/:id')
     @UseInterceptors(FileInterceptor('file',
