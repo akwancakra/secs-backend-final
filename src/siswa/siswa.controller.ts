@@ -75,6 +75,8 @@ export class SiswaController {
     @Get('search')
     async search(@Param('datasearch') search: string){
         const show = await this.siswaService.search(search)
+        
+        return show
     }
 
     @Post('update-img/:id')
