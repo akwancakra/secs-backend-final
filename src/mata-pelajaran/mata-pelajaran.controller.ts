@@ -30,6 +30,13 @@ export class MataPelajaranController {
 
         return mapel
     }
+    
+    @Get('search')
+    async search(@Param('datasearch') datasearch: string){
+        const show = await this.mapelService.search(datasearch)
+
+        return show
+    }
 
     @Patch('update')
     async update(
