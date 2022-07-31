@@ -29,6 +29,15 @@ export class SiswaService {
     async findId(condition: any): Promise<Siswa> {
         return this.siswaRepository.findOne({where: {id: condition}})
     }
+    
+    async search(condition: any): Promise<Siswa> {
+        return this.siswaRepository.findOne(
+            {where: [
+                {nama_siswa: condition},
+                {nis: condition}
+            ]
+        })
+    }
 
     async update(id: number, data: any) {
         return this.siswaRepository.update(id, data)
