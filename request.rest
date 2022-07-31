@@ -1,0 +1,79 @@
+// ============================== AUTH
+###
+POST http://localhost:5000/api/login
+Content-Type: application/json
+
+{
+    "email": "akwan@mail.com",
+    "password": "akwan"
+}
+
+###
+GET http://localhost:5000/api/token
+
+###
+DELETE http://localhost:5000/api/logout
+
+
+// ============================== ADMIN
+###
+GET http://localhost:5000/admin/user-id/3
+
+// ============================== GURU
+###
+GET http://localhost:5000/guru/data
+
+###
+POST http://localhost:5000/api/register
+Content-Type: application/json
+
+{
+    "id_mata_pelajaran": 1,
+    "role": 2,
+    "nama": "Ir. Naman Sukarman S.sos",
+    "nomor_induk": "90238923423",
+    "jenis_kelamin": "Laki-laki",
+    "agama": "Islam",
+    "email": "naman@mail.com",
+    "username": "naman",
+    "password": "naman",
+    "confPassword": "naman"
+}
+
+// ============================== SISWA
+###
+POST http://localhost:5000/api/register
+Content-Type: application/json
+
+{
+    "role": 3,
+    "nama": "Akwan Cakra Tajimalela",
+    "nomor_induk": "192010382",
+    "jenis_kelamin": "Laki-laki",
+    "agama": "Islam",
+    "alamat": "Jl. H. Naman no.60",
+    "email": "akwan@mail.com",
+    "username": "akwan",
+    "password": "akwan",
+    "confPassword": "akwan"
+}
+
+// ============================== JADWAL
+###
+GET http://localhost:5000/jadwal/data
+
+###
+GET http://localhost:5000/jadwal/1
+
+###
+POST http://localhost:5000/jadwal/create
+Content-Type: application/json
+
+{
+    "id_guru": 1,
+    "ruang": "RPL 1",
+    "tanggal": "2022-05-30 03:00:00"
+}
+
+// ============================== NILAI
+// ============================== MATPEL
